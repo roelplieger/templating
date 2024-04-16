@@ -6,3 +6,5 @@ bower_components
 build/reports
 coverage
 .npmrc
+
+templating.iml
