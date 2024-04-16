@@ -189,111 +189,111 @@ export declare class ViewFactory {
 	create(container: Container, createInstruction?: ViewCreateInstruction, element?: Element): View;
 }
 /**
-* Represents a node in the view hierarchy.
-*/
+ * Represents a node in the view hierarchy.
+ */
 export interface ViewNode {
 	/**
 	 * The children of this view node
 	 */
 	children: ViewNode[];
 	/**
-	* Binds the node and it's children.
-	* @param bindingContext The binding context to bind to.
-	* @param overrideContext A secondary binding context that can override the standard context.
-	*/
+	 * Binds the node and it's children.
+	 * @param bindingContext The binding context to bind to.
+	 * @param overrideContext A secondary binding context that can override the standard context.
+	 */
 	bind(bindingContext: Object, overrideContext?: Object): void;
 	/**
-	* Triggers the attach for the node and its children.
-	*/
+	 * Triggers the attach for the node and its children.
+	 */
 	attached(): void;
 	/**
-	* Triggers the detach for the node and its children.
-	*/
+	 * Triggers the detach for the node and its children.
+	 */
 	detached(): void;
 	/**
-	* Unbinds the node and its children.
-	*/
+	 * Unbinds the node and its children.
+	 */
 	unbind(): void;
 }
 export declare class View {
 	/**
-	* The Dependency Injection Container that was used to create this View instance.
-	*/
+	 * The Dependency Injection Container that was used to create this View instance.
+	 */
 	container: Container;
 	/**
-	* The ViewFactory that built this View instance.
-	*/
+	 * The ViewFactory that built this View instance.
+	 */
 	viewFactory: ViewFactory;
 	/**
-	* Contains the DOM Nodes which represent this View. If the view was created via the "enhance" API, this will be an Element, otherwise it will be a DocumentFragment. If not created via "enhance" then the fragment will only contain nodes when the View is detached from the DOM.
-	*/
+	 * Contains the DOM Nodes which represent this View. If the view was created via the "enhance" API, this will be an Element, otherwise it will be a DocumentFragment. If not created via "enhance" then the fragment will only contain nodes when the View is detached from the DOM.
+	 */
 	fragment: DocumentFragment | Element;
 	/**
-	* The primary binding context that this view is data-bound to.
-	*/
+	 * The primary binding context that this view is data-bound to.
+	 */
 	bindingContext: Object;
 	/**
-	* The override context which contains properties capable of overriding those found on the binding context.
-	*/
+	 * The override context which contains properties capable of overriding those found on the binding context.
+	 */
 	overrideContext: Object;
 	/**
-	* The Controller instance that owns this View.
-	*/
+	 * The Controller instance that owns this View.
+	 */
 	controller: Controller;
 	/**
-	* Creates a View instance.
-	* @param container The container from which the view was created.
-	* @param viewFactory The factory that created this view.
-	* @param fragment The DOM fragement representing the view.
-	* @param controllers The controllers inside this view.
-	* @param bindings The bindings inside this view.
-	* @param children The children view nodes of this view.
-	*/
+	 * Creates a View instance.
+	 * @param container The container from which the view was created.
+	 * @param viewFactory The factory that created this view.
+	 * @param fragment The DOM fragement representing the view.
+	 * @param controllers The controllers inside this view.
+	 * @param bindings The bindings inside this view.
+	 * @param children The children view nodes of this view.
+	 */
 	constructor(container: Container, viewFactory: ViewFactory, fragment: DocumentFragment, controllers: Controller[], bindings: Binding[], children: ViewNode[], slots: Object);
 	/**
-	* Returns this view to the appropriate view cache.
-	*/
+	 * Returns this view to the appropriate view cache.
+	 */
 	returnToCache(): void;
 	/**
-	* Triggers the created callback for this view and its children.
-	*/
+	 * Triggers the created callback for this view and its children.
+	 */
 	created(): void;
 	/**
-	* Binds the view and it's children.
-	* @param bindingContext The binding context to bind to.
-	* @param overrideContext A secondary binding context that can override the standard context.
-	*/
+	 * Binds the view and it's children.
+	 * @param bindingContext The binding context to bind to.
+	 * @param overrideContext A secondary binding context that can override the standard context.
+	 */
 	bind(bindingContext: Object, overrideContext?: Object, _systemUpdate?: boolean): void;
 	/**
-	* Adds a binding instance to this view.
-	* @param binding The binding instance.
-	*/
+	 * Adds a binding instance to this view.
+	 * @param binding The binding instance.
+	 */
 	addBinding(binding: Object): void;
 	/**
-	* Unbinds the view and its children.
-	*/
+	 * Unbinds the view and its children.
+	 */
 	unbind(): void;
 	/**
-	* Inserts this view's nodes before the specified DOM node.
-	* @param refNode The node to insert this view's nodes before.
-	*/
+	 * Inserts this view's nodes before the specified DOM node.
+	 * @param refNode The node to insert this view's nodes before.
+	 */
 	insertNodesBefore(refNode: Node): void;
 	/**
-	* Appends this view's to the specified DOM node.
-	* @param parent The parent element to append this view's nodes to.
-	*/
+	 * Appends this view's to the specified DOM node.
+	 * @param parent The parent element to append this view's nodes to.
+	 */
 	appendNodesTo(parent: Element): void;
 	/**
-	* Removes this view's nodes from the DOM.
-	*/
+	 * Removes this view's nodes from the DOM.
+	 */
 	removeNodes(): void;
 	/**
-	* Triggers the attach for the view and its children.
-	*/
+	 * Triggers the attach for the view and its children.
+	 */
 	attached(): void;
 	/**
-	* Triggers the detach for the view and its children.
-	*/
+	 * Triggers the detach for the view and its children.
+	 */
 	detached(): void;
 }
 /**
