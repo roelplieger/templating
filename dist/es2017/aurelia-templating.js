@@ -1131,7 +1131,7 @@ class View {
         }
     }
     insertNodesBefore(refNode) {
-        refNode.parentNode.insertBefore(this.fragment, refNode);
+        refNode.parentNode && refNode.parentNode.insertBefore(this.fragment, refNode);
     }
     appendNodesTo(parent) {
         parent.appendChild(this.fragment);

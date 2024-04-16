@@ -1196,7 +1196,7 @@ var View = (function () {
         }
     };
     View.prototype.insertNodesBefore = function (refNode) {
-        refNode.parentNode.insertBefore(this.fragment, refNode);
+        refNode.parentNode && refNode.parentNode.insertBefore(this.fragment, refNode);
     };
     View.prototype.appendNodesTo = function (parent) {
         parent.appendChild(this.fragment);
